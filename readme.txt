@@ -1,1 +1,1 @@
-Lyuben is gay
+Lyuben is != gay
