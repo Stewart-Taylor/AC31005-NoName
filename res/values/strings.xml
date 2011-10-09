@@ -5,4 +5,6 @@
     <string name="btn_newstring">Total Shares</string>
     <string name="lbl_display">SHARES</string>
     <string name="btn_exitstring">Exit</string>
+    <string name="lbl_totaltile">Portfolio</string>
+    <string name="lbl_shares">Shares </string>
 </resources>

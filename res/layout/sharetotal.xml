@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_height="fill_parent"
-    android:layout_width="fill_parent" android:padding="30dip"
-    android:orientation="horizontal" >
-    <LinearLayout android:orientation="vertical"
-        android:layout_width="fill_parent"
-        android:layout_gravity="center" android:layout_height="fill_parent">
-        <TextView android:layout_height="wrap_content" android:layout_width="wrap_content"
-            android:layout_gravity="center" android:layout_marginBottom="25dip"
-            android:textSize="38.5sp" android:id="@+id/lbl_Display"  android:textColor="#199606" android:text="@string/lbl_display"/>
+<RelativeLayout
+android:id="@+id/layout"
+android:layout_width="fill_parent"
+android:layout_height="fill_parent"
+xmlns:android="http://schemas.android.com/apk/res/android" >
+    <LinearLayout android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/linearLayout1" android:orientation="vertical">
+        <TextView android:layout_height="wrap_content" android:textAppearance="?android:attr/textAppearanceLarge" android:textSize="35sp" android:layout_width="fill_parent" android:gravity="center"  android:id="@+id/lbl_totaltile" android:text="@string/lbl_totaltile"></TextView>
+        <View android:id="@+id/Divider0" android:background="#AFC7E8" android:layout_height="4sp" android:layout_width="wrap_content"></View>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="TextView" android:textAppearance="?android:attr/textAppearanceMedium" android:id="@+id/lbl_totalworth"></TextView>
+        <View android:id="@+id/View01" android:background="#AFC7E8" android:layout_width="fill_parent" android:layout_height="4sp"></View>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:textAppearance="?android:attr/textAppearanceMedium" android:id="@+id/lbl_shares" android:text="@string/lbl_shares"></TextView>
+        <View android:id="@+id/View03" android:background="#AFC7E8" android:layout_width="fill_parent" android:layout_height="4sp"></View>
+       <ListView android:layout_weight="1" android:id="@+id/android:list" android:layout_height="fill_parent" android:layout_width="fill_parent" android:background="#000826" android:cacheColorHint="#000826"></ListView>
     </LinearLayout>
-</ScrollView>
+      </RelativeLayout>
