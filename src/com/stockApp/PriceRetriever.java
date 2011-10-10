@@ -24,14 +24,10 @@ public class PriceRetriever
    
    public float getPrice(String code)
    {
-       
-	   String price = readPage("SN.");
+	String price = readPage(code);
+	Float priceFloat = new Float(price);
 	   
-	   
-	   Float priceFloat = new Float(price);
-	   
-       return priceFloat;
-       
+        return priceFloat;
    }
    
    
