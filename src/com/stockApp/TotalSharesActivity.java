@@ -47,7 +47,7 @@ public class TotalSharesActivity extends  ListActivity
             
         TextView t=new TextView(this); 
         t=(TextView)findViewById(R.id.lbl_totalworth); 
-        t.setText("Portfolio Worth : ï¿½" + (total/100));
+        t.setText("Portfolio Worth : £" + (total/100));
         
         
     
@@ -73,8 +73,8 @@ public class TotalSharesActivity extends  ListActivity
     	fillShare("BP" , 192);
     	fillShare("HSBA" , 343);
     	fillShare("EXPN" , 258);
-    	 fillShare("MKS" , 485);
-    	 fillShare("SN." , 1219);
+    	fillShare("MKS" , 485);
+    	fillShare("SN." , 1219);
     	
     	 total = 0;
     	 

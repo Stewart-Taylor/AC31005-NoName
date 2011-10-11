@@ -8,7 +8,7 @@
         android:layout_gravity="center" android:layout_height="fill_parent">
         <TextView android:layout_height="wrap_content" android:layout_width="wrap_content"
             android:layout_gravity="center" android:layout_marginBottom="25dip"
-            android:textSize="38.5sp" android:id="@+id/lbl_Display"  android:textColor="#199606" android:text="@string/lbl_display"/>
+            android:textSize="38.5sp" android:id="@+id/lbl_Display"  android:textColor="#AFC7E8" android:text="@string/lbl_display"/>
         <Button android:layout_width="fill_parent"
             android:id="@+id/btn_new" android:textSize="28sp" android:layout_height="wrap_content" android:text="@string/btn_newstring"/>
         <Button android:layout_height="wrap_content" android:id="@+id/btn_exit" android:layout_width="fill_parent" android:text="@string/btn_exitstring"></Button>

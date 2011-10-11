@@ -3,7 +3,7 @@
     <string name="hello">Hello World, MainActivity!</string>
     <string name="app_name">StockMarket</string>
     <string name="btn_newstring">Total Shares</string>
-    <string name="lbl_display">SHARES</string>
+    <string name="lbl_display">Jazzy Stock</string>
     <string name="btn_exitstring">Exit</string>
     <string name="lbl_totaltile">Portfolio</string>
     <string name="lbl_shares">Shares </string>
