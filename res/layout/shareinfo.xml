@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+android:id="@+id/layout"
+android:layout_width="fill_parent"
+android:layout_height="fill_parent"
+xmlns:android="http://schemas.android.com/apk/res/android" android:background="#000000">
+    <LinearLayout android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/linearLayout1" android:orientation="vertical" android:paddingLeft="5sp">
+        <TextView android:layout_height="wrap_content" android:text="TextView" android:textAppearance="?android:attr/textAppearanceLarge" android:textSize="14sp" android:layout_width="fill_parent" android:gravity="center" android:background="#000000" android:id="@+id/lbl_shareName"></TextView>
+        <View android:id="@+id/Divider0" android:background="#53A6C2" android:layout_height="4sp" android:layout_width="wrap_content"></View>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="TextView" android:textAppearance="?android:attr/textAppearanceMedium" android:id="@+id/lbl_shareCode" android:textSize="25sp"></TextView>
+        <View android:id="@+id/View01" android:background="#53A6C2" android:layout_width="fill_parent" android:layout_height="4sp"></View>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="TextView" android:textAppearance="?android:attr/textAppearanceMedium" android:id="@+id/lbl_sharePrice" android:textSize="40sp"></TextView>
+        <View android:id="@+id/View03" android:background="#53A6C2" android:layout_width="fill_parent" android:layout_height="4sp"></View>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="TextView" android:textAppearance="?android:attr/textAppearanceMedium" android:id="@+id/lbl_shareAmount"></TextView>
+        <View android:layout_height="4sp" android:layout_width="fill_parent" android:id="@+id/View02" android:background="#53A6C2"></View>
+        <TextView android:layout_width="wrap_content" android:textAppearance="?android:attr/textAppearanceLarge" android:layout_height="wrap_content" android:text="TextView" android:id="@+id/lbl_shareTotal"></TextView>
+    </LinearLayout>
+      </RelativeLayout>

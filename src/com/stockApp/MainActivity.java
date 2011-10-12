@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.Window;
 import android.widget.Toast;
 
 
@@ -28,6 +27,8 @@ public class MainActivity extends Activity implements OnClickListener
         // click-handlers for buttons
         View newButton = findViewById(R.id.btn_new);
         newButton.setOnClickListener(this);
+        View aboutButton = findViewById(R.id.btn_about);
+        aboutButton.setOnClickListener(this);
         View exitButton = findViewById(R.id.btn_exit);
         exitButton.setOnClickListener(this);
         
@@ -44,14 +45,18 @@ public class MainActivity extends Activity implements OnClickListener
     	
         switch (v.getId()) 
         {
-            case R.id.btn_new:
-                Intent newlog = new Intent(this, TotalSharesActivity.class);
-                startActivity(newlog);
-                break;
-            case R.id.btn_exit:
-            	finish();
-            	//System.exit(0);  
-                break;
+	            case R.id.btn_new:
+	                Intent portf = new Intent(this, TotalSharesActivity.class);
+	                startActivity(portf);
+	                break;
+	            case R.id.btn_about:
+	                Intent about = new Intent(this, AboutActivity.class);
+	                startActivity(about);
+	                break;
+	            case R.id.btn_exit:
+	            	finish();
+	            	//System.exit(0);  
+	                break;
         }
         
         
