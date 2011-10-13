@@ -52,9 +52,12 @@ public class TotalSharesActivity extends  ListActivity
             getShareData();
        
             
+    
+            String priceDisplay = String.format("%.2f%n" , (total/100));
+            
         TextView t=new TextView(this); 
         t=(TextView)findViewById(R.id.lbl_totalworth); 
-        t.setText("Portfolio Worth : £" + (total/100));
+        t.setText("Portfolio Worth : £" + priceDisplay);
         
         
     

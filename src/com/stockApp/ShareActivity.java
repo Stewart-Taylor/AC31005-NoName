@@ -66,7 +66,9 @@ public class ShareActivity extends Activity
             t.setText("Price: " + price);
             
             t=(TextView)findViewById(R.id.lbl_shareTotal); 
-            t.setText("Share Set Worth : £" + (price * share.amount)/100 );
+            
+            String priceDisplay = String.format("%.2f%n" , (price * share.amount)/100);
+            t.setText("Share Set Worth : £" + priceDisplay );
        		
     	}
        	catch(Exception e)
