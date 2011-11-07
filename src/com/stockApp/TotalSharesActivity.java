@@ -1,12 +1,7 @@
 package com.stockApp;
 
 
-
 import java.util.ArrayList;
-
-
-
-
 import android.app.ListActivity;
 import android.content.Context;
 import android.content.Intent;
@@ -16,6 +11,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+
 
 public class TotalSharesActivity extends  ListActivity 
 { 
@@ -27,7 +24,6 @@ public class TotalSharesActivity extends  ListActivity
     ArrayList<Float> totalAmount = new ArrayList<Float>();
 
     
-    
     //DEFINING STRING ADAPTER WHICH WILL HANDLE DATA OF LISTVIEW
     ArrayAdapter<String> adapter;
 
@@ -35,7 +31,7 @@ public class TotalSharesActivity extends  ListActivity
     float total = 0;
     
     
-    PriceRetriever prices = new PriceRetriever();
+    PriceRetriever PriceRetriever = new PriceRetriever();
 	
 	
 	
@@ -44,89 +40,61 @@ public class TotalSharesActivity extends  ListActivity
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
+    	
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sharetotal);
         
-        
-
-            getShareData();
+        getShareData();
        
+        String priceDisplay = String.format("%.2f%n" , (total/100));
             
-    
-            String priceDisplay = String.format("%.2f%n" , (total/100));
-            
-        TextView t=new TextView(this); 
-        t=(TextView)findViewById(R.id.lbl_totalworth); 
-        t.setText("Portfolio Worth : £" + priceDisplay);
+        TextView t = new TextView(this); 
+        t =(TextView)findViewById(R.id.lbl_totalworth); 
+        t.setText("Portfolio Worth : ï¿½" + priceDisplay);
         
         
-    
         
-        adapter=new ArrayAdapter<String>(this,
-        	    android.R.layout.simple_list_item_1,
-        	    shares);
-        	setListAdapter(adapter);
+        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, shares);
+        setListAdapter(adapter);
         
-        	
-        	
-        	
-        	
-        	
     }
     
     
     
     private void getShareData()
     {
-    	
     	try
     	{
-    	
-    		/*
-    	//TODO Get shares from share data file!
-    	fillShare("BP" , 192);
-    	fillShare("HSBA" , 343);
-    	fillShare("EXPN" , 258);
-    	fillShare("MKS" , 485);
-    	fillShare("SN." , 1219);
-    	
-    	*/
-    		
-    		ShareData sd = new ShareData();
+		ShareData shareData = new ShareData();
     		
     		
-    		
-       	 for (Share s : sd.getShares())
-    	 {
-    	        fillShare(s.stockCode , s.amount);
-    	 }
+	       	 for (Share s : shareData.getShares())
+	    	 {
+	    	        fillShare(s.stockCode , s.amount);
+	    	 }
     		
     	
-    	 total = 0;
+    		 total = 0;
     	 
-    	 for (Float t : totalAmount)
-    	 {
-    	        total += t;
-    	 }
+	    	 for (Float t : totalAmount)
+	    	 {
+	    	        total += t;
+	    	 }
     	 
     	}
      	catch(Exception ex)
     	{
 			Context context = getApplicationContext();
-			CharSequence text = ex.toString();
-			int duration = Toast.LENGTH_LONG;
-
-			Toast toast = Toast.makeText(context, "Could not connect to the internet!", duration);
+			Toast toast = Toast.makeText(context, "Could not connect to the internet!", Toast.LENGTH_LONG);
 			toast.show();
-    	}
-    	 
+    	}	 
     }
     
     
   
     private void fillShare(String code , int quantity)
     {
-    	float price = prices.getPrice(code);
+    	float price = PriceRetriever.getPrice(code);
     	shares.add("" + code + " : " + price + " (" + quantity + ")");
    	 	totalAmount.add(price * quantity);
    	 	shareData.add(code);
@@ -140,32 +108,26 @@ public class TotalSharesActivity extends  ListActivity
     {
     	try
     	{
-    	
-    
-    	String selection = shareData.get(position);
-    	
-    	//start activity
-        Intent shareIntent = new Intent(this, ShareActivity.class);
-        
-        Bundle b = new Bundle();
-
-        b.putString("id" , selection );
-
-        shareIntent.putExtras(b);
-
-        startActivity(shareIntent);
-        
+	    	String selection = shareData.get(position);
+	    	
+	    	//start activity
+	        Intent shareIntent = new Intent(this, ShareActivity.class);
+	        
+	        //Passes share code to new Activity
+	        Bundle b = new Bundle();
+	        b.putString("id" , selection );
+	        shareIntent.putExtras(b);
+	
+	        startActivity(shareIntent);
     	}
-		catch(Exception ex)
-		{
-			Context context = getApplicationContext();
-			CharSequence text = ex.toString();
-			int duration = Toast.LENGTH_LONG;
-
-			Toast toast = Toast.makeText(context, text, duration);
-			toast.show();
+	catch(Exception ex)
+	{
+		Context context = getApplicationContext();
+		CharSequence errorText = ex.toString();
+		Toast toast = Toast.makeText(context, errorText, Toast.LENGTH_LONG);
+		toast.show();
 			
-		}
+	}
     }
     
 
