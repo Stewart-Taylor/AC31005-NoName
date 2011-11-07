@@ -17,13 +17,11 @@ public class MainActivity extends Activity implements OnClickListener
     public void onCreate(Bundle savedInstanceState)
     {
     	
-    
-    	
+    	//Creates XML GUI
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         
-        
-        
+            
         // click-handlers for buttons
         View newButton = findViewById(R.id.btn_new);
         newButton.setOnClickListener(this);
@@ -31,9 +29,7 @@ public class MainActivity extends Activity implements OnClickListener
         aboutButton.setOnClickListener(this);
         View exitButton = findViewById(R.id.btn_exit);
         exitButton.setOnClickListener(this);
-        
-        
-        
+         
     }
     
     
@@ -42,27 +38,27 @@ public class MainActivity extends Activity implements OnClickListener
     	
     	try
     	{
-    	
-        switch (v.getId()) 
-        {
-	            case R.id.btn_new:
-	                Intent portf = new Intent(this, TotalSharesActivity.class);
-	                startActivity(portf);
-	                break;
-	            case R.id.btn_about:
-	                Intent about = new Intent(this, AboutActivity.class);
-	                startActivity(about);
-	                break;
-	            case R.id.btn_exit:
-	            	finish();
-	            	//System.exit(0);  
-	                break;
-        }
+    		//Starts new activity based on which button pressed
+	        switch (v.getId()) 
+	        {
+		            case R.id.btn_new:
+		                Intent sharesIntent = new Intent(this, TotalSharesActivity.class);
+		                startActivity(sharesIntent);
+		                break;
+		            case R.id.btn_about:
+		                Intent aboutIntent = new Intent(this, AboutActivity.class);
+		                startActivity(aboutIntent);
+		                break;
+		            case R.id.btn_exit:
+		            	finish();
+		                break;
+	        }
         
         
     	}
     	catch(Exception ex)
     	{
+    			//POP UP Error Message
 			Context context = getApplicationContext();
 			CharSequence text = ex.toString();
 			int duration = Toast.LENGTH_LONG;
@@ -71,7 +67,4 @@ public class MainActivity extends Activity implements OnClickListener
 			toast.show();
     	}
     }
-    
-    
-    
 }
