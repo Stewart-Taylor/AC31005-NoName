@@ -1,88 +1,77 @@
 package com.stockApp;
 
-import android.app.Activity;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.widget.TextView;
 
 
-
-
 public class ShareActivity extends Activity 
 {
+	
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
     	
-    
-    	
         super.onCreate(savedInstanceState);
         setContentView(R.layout.shareinfo);
         
         
+        //Extracts stock Code
         Bundle b = getIntent().getExtras();
         String stockCode = b.getString("id");
        
         
 
-		ShareData sd = new ShareData();
-		Share share;
+	ShareData shareData = new ShareData();
+	Share share;
         
-      	 for (Share s : sd.getShares())
+        
+        //Retrieves selected share
+      	 for (Share s : shareData.getShares())
     	 {
-      		 if( stockCode.equals(s.stockCode))
+      		if( stockCode.equals(s.stockCode))
       		 {
       			 share = s; 
-      			 setShareData(share);
+      			 displayShareData(share);
       		 }
     	 }
         
-        
-    
-      	 
-        
-    }
+        }
     
     
-    private void setShareData(Share share)
+    private void displayShareData(Share share)
     {
-    	
-    	
     	
     	float price = 0;
     	
     	
-    	
-    	//get price
        	try
     	{
-       		PriceRetriever prices = new PriceRetriever();
+       		PriceRetriever priceRetriever = new PriceRetriever();
+       		price = priceRetriever.getPrice(share.stockCode);
        		
-       		price = prices.getPrice(share.stockCode);
-       		
-       	    TextView t=new TextView(this); 
-            t=(TextView)findViewById(R.id.lbl_sharePrice); 
-            t.setText("Price: " + price);
+	       	TextView t = new TextView(this); 
+	       
+	       t=(TextView)findViewById(R.id.lbl_sharePrice); 
+	        t.setText("Price: " + price);
             
-            t=(TextView)findViewById(R.id.lbl_shareTotal); 
+                t=(TextView)findViewById(R.id.lbl_shareTotal); 
             
-            String priceDisplay = String.format("%.2f%n" , (price * share.amount)/100);
-            t.setText("Share Set Worth : £" + priceDisplay );
+                String priceDisplay = String.format("%.2f%n" , (price * share.amount)/100);
+                t.setText("Share Set Worth : ï¿½" + priceDisplay );
        		
     	}
        	catch(Exception e)
        	{
-       		
-       		TextView t=new TextView(this); 
-            t=(TextView)findViewById(R.id.lbl_sharePrice); 
-            t.setText("Could Not Retrieve Price" );
+       		TextView t = new TextView(this); 
+                t = (TextView)findViewById(R.id.lbl_sharePrice); 
+                t.setText("Could Not Retrieve Price" );
        	}
     	
     	
-    	
-    	
-        TextView t=new TextView(this); 
+        TextView t = new TextView(this); 
         
 
         t=(TextView)findViewById(R.id.lbl_shareName); 
@@ -96,14 +85,6 @@ public class ShareActivity extends Activity
         t=(TextView)findViewById(R.id.lbl_shareAmount); 
         t.setText("Amount : " + share.amount);
         
-
-    	
-    	
-    	
     }
-    
-    
   
-    
-    
 }
