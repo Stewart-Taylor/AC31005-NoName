@@ -9,60 +9,50 @@ import java.net.URLConnection;
 public class PriceRetriever
 {
     
+    
    public  void PriceRetriever(String[] args) throws Exception
    {
-     //  readPage("BP");
-     //  readPage("HSBA");
-     //  readPage("EXPN");
-     //  readPage("MKS");
-     //  readPage("SN.");
+ 
+ 
    }
    
-   
-   
-   
-   
+
    public float getPrice(String code)
    {
-	String price = readPage(code);
-	Float priceFloat = new Float(price);
-	   
-        return priceFloat;
+	return new Float(readPriceFromURL(code));
    }
    
    
-   private  String  readPage(String code)
+   
+   private String readPriceFromURL(String code)
    {
        String price = "Error";
        
        try
        {
-               URL url = new URL("http://finance.google.com/finance/info?client=ig&q=" + code);
-       URLConnection con = url.openConnection();
-       BufferedReader in = new BufferedReader(
-                               new InputStreamReader(
-                               con.getInputStream()));
-       String inputLine;
+               	URL url = new URL("http://finance.google.com/finance/info?client=ig&q=" + code);
+       	       	URLConnection connection = url.openConnection();
+     		BufferedReader in = new BufferedReader( new InputStreamReader(connection.getInputStream()));
+      		
+      		String inputLine;
 
-       int counter  = 0;
-       while ((inputLine = in.readLine()) != null) 
-       {
-           counter++;
-           if(counter == 7)
-           {
-              // System.out.println(inputLine);
-              price = extractPrice(inputLine);
-           }
-          
-           
-       }
-       in.close();
+	       int counter  = 0;
+	       while ((inputLine = in.readLine()) != null) 
+	       {
+	           counter++;
+	           if(counter == 7)
+	           {
+	              price = extractPrice(inputLine);
+	           }
+	       }
+	       
+	       in.close();
        
-   }
-   catch(Exception e)
-   {
-       
-   }
+	}
+	catch(Exception e)
+	{
+		
+	}
        
        return price;
    }
