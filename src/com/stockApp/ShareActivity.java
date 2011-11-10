@@ -31,7 +31,7 @@ public class ShareActivity extends Activity
         //Retrieves selected share
       	 for (Share s : shareData.getShares())
     	 {
-      		if( stockCode.equals(s.stockCode))
+      		if( stockCode.equals(s.getStockCode()))
       		 {
       			 share = s; 
       			 displayShareData(share);
@@ -50,7 +50,7 @@ public class ShareActivity extends Activity
        	try
     	{
        		PriceRetriever priceRetriever = new PriceRetriever();
-       		price = priceRetriever.getPrice(share.stockCode);
+       		price = priceRetriever.getPrice(share.getStockCode());
        		
 	       	TextView t = new TextView(this); 
 	       
@@ -59,7 +59,7 @@ public class ShareActivity extends Activity
             
                 t=(TextView)findViewById(R.id.lbl_shareTotal); 
             
-                String priceDisplay = String.format("%.2f%n" , (price * share.amount)/100);
+                String priceDisplay = String.format("%.2f%n" , (price * share.getShareAmount())/100);
                 t.setText("Share Set Worth : �" + priceDisplay );
        		
     	}
@@ -75,15 +75,15 @@ public class ShareActivity extends Activity
         
 
         t=(TextView)findViewById(R.id.lbl_shareName); 
-        t.setText(share.fullShareName);
+        t.setText(share.getShareName());
         
         t=(TextView)findViewById(R.id.lbl_shareCode); 
-        t.setText("Stock Code: " + share.stockCode);
+        t.setText("Stock Code: " + share.getStockCode());
         
 
         
         t=(TextView)findViewById(R.id.lbl_shareAmount); 
-        t.setText("Amount : " + share.amount);
+        t.setText("Amount : " + share.getShareAmount());
         
     }
   

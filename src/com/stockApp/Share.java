@@ -17,17 +17,17 @@ public class Share
 	}
 	
 	
-	public getShareName()
+	public String getShareName()
 	{
 		return fullShareName;
 	}
 	
-	public getStockCode()
+	public String getStockCode()
 	{
 		return stockCode;
 	}
 	
-	public getShareAmount()
+	public int getShareAmount()
 	{
 		return amount;
 	}

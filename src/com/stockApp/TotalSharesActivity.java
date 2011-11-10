@@ -70,7 +70,7 @@ public class TotalSharesActivity extends  ListActivity
     		
 	       	 for (Share s : shareData.getShares())
 	    	 {
-	    	        fillShare(s.stockCode , s.amount);
+	    	        fillShare(s.getStockCode() , s.getShareAmount());
 	    	 }
     		
     	

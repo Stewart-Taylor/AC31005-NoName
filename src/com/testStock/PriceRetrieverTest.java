@@ -1,6 +1,7 @@
 package com.testStock;
 
 import org.junit.* ;
+
 import static org.junit.Assert.* ;
 
 import com.stockApp.PriceRetriever;
@@ -22,7 +23,7 @@ public class PriceRetrieverTest extends TestCase
 	      
 	      
 	   
-	      
+	      //Proves it gets price
 	      assertTrue(price >= 0f) ;
 	   }
 	
@@ -33,8 +34,7 @@ public class PriceRetrieverTest extends TestCase
 	      int price = 50;
 	      
 	      
-	   
-	      
+
 	      assertTrue(price == 50) ;
 	   }
 	
