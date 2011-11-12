@@ -14,46 +14,51 @@ public final class R {
         public static final int icon=0x7f020000;
     }
     public static final class id {
-        public static final int Divider0=0x7f05000f;
-        public static final int View01=0x7f050011;
-        public static final int View02=0x7f050015;
-        public static final int View03=0x7f050013;
-        public static final int btn_about=0x7f05000b;
-        public static final int btn_alert=0x7f050009;
-        public static final int btn_exit=0x7f05000c;
-        public static final int btn_performance =0x7f05000a;
-        public static final int btn_portfolio=0x7f050008;
-        public static final int imageView1=0x7f050007;
-        public static final int layout=0x7f05000d;
-        public static final int lbl_Display=0x7f050006;
+        public static final int Divider0=0x7f050007;
+        public static final int View01=0x7f050008;
+        public static final int View02=0x7f050019;
+        public static final int View03=0x7f05000a;
+        public static final int btn_about=0x7f050013;
+        public static final int btn_alert=0x7f050011;
+        public static final int btn_exit=0x7f050014;
+        public static final int btn_performance =0x7f050012;
+        public static final int btn_portfolio=0x7f050010;
+        public static final int imageView1=0x7f05000f;
+        public static final int layout=0x7f050005;
+        public static final int lbl_Display=0x7f05000e;
         public static final int lbl_aboutTitle=0x7f050000;
-        public static final int lbl_shareAmount=0x7f050014;
-        public static final int lbl_shareCode=0x7f050010;
-        public static final int lbl_shareName=0x7f05000e;
-        public static final int lbl_sharePrice=0x7f050012;
-        public static final int lbl_shareTotal=0x7f050016;
-        public static final int lbl_shares=0x7f050019;
-        public static final int lbl_totaltile=0x7f050017;
-        public static final int lbl_totalworth=0x7f050018;
+        public static final int lbl_alert_tile=0x7f050006;
+        public static final int lbl_shareAmount=0x7f050018;
+        public static final int lbl_shareCode=0x7f050016;
+        public static final int lbl_shareName=0x7f050015;
+        public static final int lbl_sharePrice=0x7f050017;
+        public static final int lbl_shareTotal=0x7f05001a;
+        public static final int lbl_shares=0x7f050009;
+        public static final int lbl_totaltile=0x7f05001b;
+        public static final int lbl_totalworth=0x7f05001c;
         public static final int linearLayout1=0x7f050002;
+        public static final int text1=0x7f05000b;
+        public static final int text2=0x7f05000c;
+        public static final int text3=0x7f05000d;
         public static final int textView1=0x7f050001;
         public static final int textView2=0x7f050003;
         public static final int textView3=0x7f050004;
-        public static final int toggleButton1=0x7f050005;
     }
     public static final class layout {
         public static final int about=0x7f030000;
         public static final int alert=0x7f030001;
-        public static final int main=0x7f030002;
-        public static final int performance=0x7f030003;
-        public static final int shareinfo=0x7f030004;
-        public static final int sharetotal=0x7f030005;
+        public static final int alert_item=0x7f030002;
+        public static final int main=0x7f030003;
+        public static final int performance=0x7f030004;
+        public static final int shareinfo=0x7f030005;
+        public static final int sharetotal=0x7f030006;
     }
     public static final class string {
         public static final int aboutLabelTitle=0x7f040007;
         public static final int aboutLink=0x7f04000a;
         public static final int aboutSource=0x7f040009;
         public static final int aboutcredit=0x7f040008;
+        public static final int alert_tile=0x7f04000e;
         public static final int app_name=0x7f040001;
         public static final int btn_about=0x7f04000b;
         public static final int btn_exitstring=0x7f040004;

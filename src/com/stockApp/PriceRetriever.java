@@ -10,7 +10,7 @@ public class PriceRetriever
 {
     
     
-   public  void PriceRetriever(String[] args) throws Exception
+   public   PriceRetriever() 
    {
  
    }
@@ -23,7 +23,7 @@ public class PriceRetriever
    
    public float getDailyPercentChange(String code)
    {
-   	return new Float(extractPrice(code));
+   	return new Float(readDayPercentChangeFromURL( code));
    }
    
    
