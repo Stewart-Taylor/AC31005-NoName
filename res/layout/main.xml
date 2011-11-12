@@ -10,8 +10,26 @@
             <TextView android:textSize="38.5sp" android:textColor="#AFC7E8" android:layout_marginBottom="25dip" android:id="@+id/lbl_Display" android:text="@string/lbl_display" android:layout_gravity="center" android:layout_width="206dp" android:layout_height="63dp"></TextView>
             <ImageView android:id="@+id/imageView1" android:layout_width="fill_parent" android:layout_weight="1.03" android:layout_height="wrap_content" android:src="@drawable/icon"></ImageView>
         </LinearLayout>
-        <Button android:layout_width="fill_parent"
-            android:id="@+id/btn_new" android:textSize="28sp" android:layout_height="wrap_content" android:text="@string/btn_newstring"/>
+
+        <Button
+            android:id="@+id/btn_portfolio"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_newstring"
+            android:textSize="28sp" />
+
+        <Button
+            android:id="@+id/btn_alert"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/lbl_alertbtn" />
+
+        <Button
+            android:id="@+id/btn_performance "
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/lbl_performancebtn" />
+
         <Button android:layout_height="wrap_content" android:layout_width="fill_parent" android:text="@string/btn_about" android:id="@+id/btn_about"></Button>
         <Button android:layout_height="wrap_content" android:id="@+id/btn_exit" android:layout_width="fill_parent" android:text="@string/btn_exitstring"></Button>
     </LinearLayout>

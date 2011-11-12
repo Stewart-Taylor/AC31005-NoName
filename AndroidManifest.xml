@@ -16,6 +16,8 @@
         <activity android:name="TotalSharesActivity"></activity>
         <activity android:name="AboutActivity"></activity>
         <activity android:name="ShareActivity"></activity>
+        <activity android:name="AlertActivity"></activity>
+        <activity android:name="PerformanceActivity"></activity>
 
     </application>
     <uses-permission android:name="android.permission.INTERNET" />

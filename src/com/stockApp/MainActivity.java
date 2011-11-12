@@ -23,8 +23,12 @@ public class MainActivity extends Activity implements OnClickListener
         
             
         // click-handlers for buttons
-        View newButton = findViewById(R.id.btn_new);
+        View newButton = findViewById(R.id.btn_portfolio);
         newButton.setOnClickListener(this);
+        View alertButton = findViewById(R.id.btn_alert);
+        alertButton.setOnClickListener(this);
+        View performanceButton = findViewById(R.id.btn_performance);
+        performanceButton.setOnClickListener(this);
         View aboutButton = findViewById(R.id.btn_about);
         aboutButton.setOnClickListener(this);
         View exitButton = findViewById(R.id.btn_exit);
@@ -41,9 +45,17 @@ public class MainActivity extends Activity implements OnClickListener
     		//Starts new activity based on which button pressed
 	        switch (v.getId()) 
 	        {
-		            case R.id.btn_new:
+		            case R.id.btn_portfolio:
 		                Intent sharesIntent = new Intent(this, TotalSharesActivity.class);
 		                startActivity(sharesIntent);
+		                break;
+		            case R.id.btn_alert:
+		                Intent alertIntent = new Intent(this, AlertActivity.class);
+		                startActivity(alertIntent);
+		                break;
+		            case R.id.btn_performance:
+		                Intent performanceIntent = new Intent(this, PerformanceActivity.class);
+		                startActivity(performanceIntent);
 		                break;
 		            case R.id.btn_about:
 		                Intent aboutIntent = new Intent(this, AboutActivity.class);
