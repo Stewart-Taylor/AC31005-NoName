@@ -13,13 +13,17 @@ public class PriceRetriever
    public  void PriceRetriever(String[] args) throws Exception
    {
  
- 
    }
    
 
    public float getPrice(String code)
    {
 	return new Float(readPriceFromURL(code));
+   }
+   
+   public float getDailyPercentChange(String code)
+   {
+   	return new Float(extractPrice(code));
    }
    
    
@@ -68,5 +72,50 @@ public class PriceRetriever
      
        return endText; 
    }
+   
+   
+    public String readDayPercentChangeFromURL(String code)
+   {
+       String price = "Error";
+       
+       try
+       {
+                URL url = new URL("http://finance.google.com/finance/info?client=ig&q=" + code);
+                URLConnection connection = url.openConnection();
+                BufferedReader in = new BufferedReader( new InputStreamReader(connection.getInputStream()));
+            
+            String inputLine;
+
+           int counter  = 0;
+           while ((inputLine = in.readLine()) != null) 
+           {
+               counter++;
+               if(counter == 13)
+               {
+                  price = extractChangePercent(inputLine);
+               }
+           }
+
+           in.close();
+       
+    }
+    catch(Exception e)
+    {
+
+    }
+       
+       return price;
+   }
+   
+    private  String extractChangePercent(String input)
+   {
+       //,"cp" : "0.85" INPUT FORMAT
+       
+       String endText = input.substring(9 , input.length() );
+       endText =  endText.substring(0, endText.indexOf("\"") );
+       
+       return endText; 
+   }
+   
    
 }
