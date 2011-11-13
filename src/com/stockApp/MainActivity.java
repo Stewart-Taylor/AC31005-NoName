@@ -46,15 +46,18 @@ public class MainActivity extends Activity implements OnClickListener
 	        switch (v.getId()) 
 	        {
 		            case R.id.btn_portfolio:
+		            	ShowMessage("Fetching Share Data");
 		                Intent sharesIntent = new Intent(this, TotalSharesActivity.class);
 		                startActivity(sharesIntent);
 		                break;
 		            case R.id.btn_alert:
 		                Intent alertIntent = new Intent(this, AlertActivity.class);
+		                ShowMessage("Fetching Share Data");
 		                startActivity(alertIntent);
 		                break;
 		            case R.id.btn_performance:
 		                Intent performanceIntent = new Intent(this, PerformanceActivity.class);
+		                ShowMessage("Fetching Share Data");
 		                startActivity(performanceIntent);
 		                break;
 		            case R.id.btn_about:
@@ -79,4 +82,23 @@ public class MainActivity extends Activity implements OnClickListener
 			toast.show();
     	}
     }
+    
+    
+    private void ShowMessage(String text)
+    {
+    	
+    	
+		Context context = getApplicationContext();
+		Toast toast = Toast.makeText(context, text, Toast.LENGTH_SHORT);
+		toast.show();	
+		
+		try {
+			Thread.sleep(40);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	
+    }
+    
 }
