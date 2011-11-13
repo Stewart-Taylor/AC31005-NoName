@@ -57,10 +57,18 @@ public class ShareActivity extends Activity
 	       t=(TextView)findViewById(R.id.lbl_sharePrice); 
 	        t.setText("Price: " + price);
             
-                t=(TextView)findViewById(R.id.lbl_shareTotal); 
-            
+                t=(TextView)findViewById(R.id.lbl_shareTotal_title); 
+                t.setText("Share Set Worth " );
+                
+                
+                t=(TextView)findViewById(R.id.lbl_sharetotal_display); 
                 String priceDisplay = String.format("%.2f%n" , (price * share.getShareAmount())/100);
-                t.setText("Share Set Worth : ï¿½" + priceDisplay );
+                t.setText("£" + priceDisplay );
+                
+                t=(TextView)findViewById(R.id.lbl_daychange_percent); 
+                
+                float percentChange = priceRetriever.getDailyPercentChange(share.getStockCode());
+                t.setText("Daily Price Change : " + percentChange + "%" );
        		
     	}
        	catch(Exception e)
