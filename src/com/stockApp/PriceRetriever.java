@@ -87,6 +87,8 @@ public class PriceRetriever
             String inputLine;
 
            int counter  = 0;
+           
+           
            while ((inputLine = in.readLine()) != null) 
            {
                counter++;
