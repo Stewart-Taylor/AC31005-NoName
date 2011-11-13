@@ -6,8 +6,27 @@ android:layout_height="fill_parent"
 xmlns:android="http://schemas.android.com/apk/res/android" >
     <LinearLayout android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/linearLayout1" android:orientation="vertical" android:paddingLeft="4sp">
         <TextView android:layout_height="wrap_content" android:textAppearance="?android:attr/textAppearanceLarge" android:textSize="35sp" android:layout_width="fill_parent" android:gravity="center"  android:id="@+id/lbl_totaltile" android:text="@string/lbl_totaltile"></TextView>
+
         <View android:id="@+id/Divider0" android:background="#AFC7E8" android:layout_height="4sp" android:layout_width="wrap_content"></View>
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="TextView" android:textAppearance="?android:attr/textAppearanceMedium" android:id="@+id/lbl_totalworth"></TextView>
+
+        <TextView
+            android:id="@+id/lbl_totalworth"
+            android:textColor="#23cf34"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textSize="25sp" >
+</TextView>
+
+        <TextView
+            android:id="@+id/lbl_error"
+            android:textColor="#E50000"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
         <View android:id="@+id/View01" android:background="#AFC7E8" android:layout_width="fill_parent" android:layout_height="4sp"></View>
         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:textAppearance="?android:attr/textAppearanceMedium" android:id="@+id/lbl_shares" android:text="@string/lbl_shares"></TextView>
         <View android:id="@+id/View03" android:background="#AFC7E8" android:layout_width="fill_parent" android:layout_height="4sp"></View>

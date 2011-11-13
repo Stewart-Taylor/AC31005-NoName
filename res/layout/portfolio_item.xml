@@ -22,6 +22,7 @@
 
         <TextView
             android:id="@+id/lbl_sharename"
+            android:textColor="#FFD100"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Large Text"
@@ -31,6 +32,7 @@
 
     <TextView
         android:id="@+id/lbl_share_set"
+        android:textColor="#23cf34"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="19dp"
@@ -39,6 +41,7 @@
 
     <TextView
         android:id="@+id/lbl_extra_shareinfo"
+        android:textColor="#FFFF8C"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Medium Text"

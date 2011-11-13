@@ -32,6 +32,7 @@ public final class R {
         public static final int lbl_aboutTitle=0x7f050000;
         public static final int lbl_alert_tile=0x7f050006;
         public static final int lbl_daychange_percent=0x7f050023;
+        public static final int lbl_error=0x7f050027;
         public static final int lbl_extra_shareinfo=0x7f05001a;
         public static final int lbl_shareAmount=0x7f05001e;
         public static final int lbl_shareCode=0x7f05001c;

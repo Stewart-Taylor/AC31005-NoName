@@ -1,6 +1,5 @@
 package com.stockApp;
 
-
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -16,7 +15,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
-
 public class TotalSharesActivity extends  ListActivity 
 { 
 	
@@ -30,11 +28,12 @@ public class TotalSharesActivity extends  ListActivity
     ArrayAdapter<String> adapter;
 
   
-    float total = 0;
+    
     
     PriceRetriever priceRetriever = new PriceRetriever();
 	
-	
+    //used to indicate if a set could not be retrieved
+	boolean errorGettingTotals = false;
 	
 	
     /** Called when the activity is first created. */
@@ -46,17 +45,24 @@ public class TotalSharesActivity extends  ListActivity
         setContentView(R.layout.sharetotal);
         
        
+        
+        
         populateList();
-        getPortfolioTotal();
+        float portfolioTotal =  getPortfolioTotal();
         
         
-        String priceDisplay = String.format("%.2f%n" , (total/100));
+        
             
         TextView t = new TextView(this); 
         t =(TextView)findViewById(R.id.lbl_totalworth); 
-        t.setText("Portfolio Worth : £" + priceDisplay);
+        t.setText("Portfolio Worth : £" + portfolioTotal);
         
         
+        if( errorGettingTotals == true)
+        {
+            t =(TextView)findViewById(R.id.lbl_error); 
+            t.setText("Error Retrieving Shares! , Total will not include all shares");	
+        }
         
         
         SimpleAdapter adapter = new SimpleAdapter(
@@ -65,7 +71,6 @@ public class TotalSharesActivity extends  ListActivity
         		R.layout.portfolio_item,
         		new String[] {"name","price","extra"},
         		new int[] {R.id.lbl_sharename,R.id.lbl_share_set, R.id.lbl_extra_shareinfo}
-
         		);
         
         	
@@ -92,20 +97,48 @@ public class TotalSharesActivity extends  ListActivity
     
     
     
-    private void getPortfolioTotal()
+    private float getPortfolioTotal()
     {
-  		 total = 0;
-    	 
-    	 for (Float t : totalAmount)
-    	 {
-    	        total += t;
-    	 }	
     	
+    	ShareData shareData = new ShareData();
     	
+    	float total = 0;
+     	 for (Share s : shareData.getShares())
+       	 {
+     		 total += getSetWorth(s);
+     		
+       	        
+       	        
+       	 }
+    	
+     	 //format number then return
+     	 //TO DO
+     	 
+    	return total;
     
     }
     
- 
+    
+    
+    private float getSetWorth(Share share)
+    {
+    	float setTotal = 0;
+    	
+    	try
+    	{
+    	
+    	float price = priceRetriever.getPrice(share.getStockCode());
+    	
+    	setTotal = share.getShareAmount() * price ;
+    	
+    	}
+    	catch(Exception e)
+    	{
+    		errorGettingTotals = true;
+    	}
+    	
+    	return setTotal ;
+    }
     
     
     
