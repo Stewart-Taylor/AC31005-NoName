@@ -48,6 +48,8 @@ public class AlertActivity extends  ListActivity
 
         		);
         
+        
+        		list.clear();
         		populateList();
 
 

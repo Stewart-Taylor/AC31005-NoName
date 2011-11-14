@@ -22,7 +22,6 @@ public class TotalSharesActivity extends  ListActivity
     //LIST OF ARRAY STRINGS WHICH WILL SERVE AS LIST ITEMS
 	static final ArrayList<HashMap<String,String>> shares =  new ArrayList<HashMap<String,String>>();
     ArrayList<String> shareData = new ArrayList<String>();
-    ArrayList<Float> totalAmount = new ArrayList<Float>();
 
     //DEFINING STRING ADAPTER WHICH WILL HANDLE DATA OF LISTVIEW
     ArrayAdapter<String> adapter;
@@ -45,6 +44,9 @@ public class TotalSharesActivity extends  ListActivity
         setContentView(R.layout.sharetotal);
         
        
+        
+        shares.clear();
+        shareData.clear();
         
         
         populateList();

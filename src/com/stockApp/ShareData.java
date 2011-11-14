@@ -33,7 +33,7 @@ public class ShareData
 		shares.add( new Share( "Marks and Spencer Ordinary 25" , "MKS", 485));
 		shares.add( new Share( "Smith & Nephew plc ordinary" , "SN.", 1219));
 		
-		shares.add( new Share( "Test ltd 40 PLC" , "Test", 999));
+		//shares.add( new Share( "Test ltd 40 PLC" , "Test", 999));
 	}
 	
 	
