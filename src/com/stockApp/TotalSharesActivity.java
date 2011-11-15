@@ -57,7 +57,7 @@ public class TotalSharesActivity extends  ListActivity
             
         TextView t = new TextView(this); 
         t =(TextView)findViewById(R.id.lbl_totalworth); 
-        t.setText(" £" + portfolioTotal);
+        t.setText(" £" + (int)portfolioTotal);
         
         
         if( errorGettingTotals == true)
@@ -158,8 +158,9 @@ public class TotalSharesActivity extends  ListActivity
     	
         	HashMap<String,String> temp = new HashMap<String,String>();
         	temp.put("name", share.getShareName());
-        	temp.put("price", "Set Worth : £" + ( (price * share.getShareAmount())/100) );
-        	temp.put("extra", "Amount: " + share.getShareAmount() + "	 Price: " + price);
+        	int priceDisplay = (int)( (price * share.getShareAmount())/100);
+        	temp.put("price", "Set Worth : £" + priceDisplay );
+        	temp.put("extra", "Amount: " + share.getShareAmount() + "	 Price: " + (int)price);
         	shares.add(temp);
         	shareData.add(share.getStockCode());
     
