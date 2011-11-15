@@ -22,15 +22,17 @@
             android:id="@+id/btn_alert"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="@string/lbl_alertbtn" />
+            android:text="@string/lbl_alertbtn"
+            android:textSize="28sp" />
 
         <Button
             android:id="@+id/btn_performance "
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="@string/lbl_performancebtn" />
+            android:text="@string/lbl_performancebtn" 
+            android:textSize="20sp"/>
 
-        <Button android:layout_height="wrap_content" android:layout_width="fill_parent" android:text="@string/btn_about" android:id="@+id/btn_about"></Button>
-        <Button android:layout_height="wrap_content" android:id="@+id/btn_exit" android:layout_width="fill_parent" android:text="@string/btn_exitstring"></Button>
+        <Button android:layout_height="wrap_content" android:layout_width="fill_parent" android:text="@string/btn_about" android:id="@+id/btn_about" android:textSize="28sp"></Button>
+        <Button android:layout_height="wrap_content" android:id="@+id/btn_exit" android:layout_width="fill_parent" android:text="@string/btn_exitstring" android:textSize="28sp"></Button>
     </LinearLayout>
 </ScrollView>
