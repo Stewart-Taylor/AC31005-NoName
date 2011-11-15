@@ -10,14 +10,22 @@ xmlns:android="http://schemas.android.com/apk/res/android" >
         <View android:id="@+id/Divider0" android:background="#AFC7E8" android:layout_height="4sp" android:layout_width="wrap_content"></View>
 
         <TextView
-            android:id="@+id/lbl_totalworth"
-            android:textColor="#23cf34"
+            android:id="@+id/lbl_totaltitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView"
+            android:text="Portfolio Worth:"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textSize="25sp" >
-</TextView>
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/lbl_totalworth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="£0"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#288C00"
+            android:textSize="25sp" />
 
         <TextView
             android:id="@+id/lbl_error"

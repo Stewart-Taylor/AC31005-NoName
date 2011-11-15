@@ -57,7 +57,7 @@ public class TotalSharesActivity extends  ListActivity
             
         TextView t = new TextView(this); 
         t =(TextView)findViewById(R.id.lbl_totalworth); 
-        t.setText("Portfolio Worth : £" + portfolioTotal);
+        t.setText(" £" + portfolioTotal);
         
         
         if( errorGettingTotals == true)
