@@ -9,6 +9,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
@@ -17,7 +18,7 @@ import android.widget.Toast;
 
 
 
-public class AlertActivity extends  ListActivity 
+public class AlertActivity extends  ListActivity implements OnClickListener 
 { 
 	
 	static final ArrayList<HashMap<String,String>> list =  new ArrayList<HashMap<String,String>>();
@@ -39,27 +40,54 @@ public class AlertActivity extends  ListActivity
         setContentView(R.layout.alert);
         
      
-        SimpleAdapter adapter = new SimpleAdapter(
-        		this,
-        		list,
-        		R.layout.alert_item,
-        		new String[] {"name","price","color"},
-        		new int[] {R.id.text1,R.id.text2, R.id.text3}
 
-        		);
         
+        View newButton = findViewById(R.id.btn_refresh);
+        newButton.setOnClickListener(this);
         
-        		list.clear();
-        		populateList();
+        refreshList();
+        
 
-
-        		setListAdapter(adapter);
     }
     
     
     
     
     
+    private void refreshList()
+    {
+    	
+        SimpleAdapter adapter = new SimpleAdapter(
+        		this,
+        		list,
+        		R.layout.alert_item,
+        		new String[] {"name","change","rocket" ,"plummet"},
+        		new int[] {R.id.text1,R.id.text2, R.id.lbl_rocket , R.id.lbl_plummet }
+
+        		);
+    	
+		list.clear();
+		populateList();
+
+
+		setListAdapter(adapter);
+    
+    }
+    
+    
+    public void onClick(View v)
+    {
+    	
+    	
+    		//Starts new activity based on which button pressed
+	        switch (v.getId()) 
+	        {
+		            case R.id.btn_refresh:
+		                refreshList();
+		                break;
+		                
+	        }
+    	}
     
     private void populateList()
     {
@@ -70,7 +98,7 @@ public class AlertActivity extends  ListActivity
 		
       	 for (Share s : shareData.getShares())
    	 {
-   	        fillShare(s.getStockCode() );
+   	        fillShare(s );
    	 }
       	 
     
@@ -78,7 +106,7 @@ public class AlertActivity extends  ListActivity
     }
     
     
-    private void fillShare(String code )
+    private void fillShare(Share share )
     {
     	
     	
@@ -86,16 +114,17 @@ public class AlertActivity extends  ListActivity
     	{
     		
     	
-    	float price = priceRetriever.getDailyPercentChange(code);
+    	float price = priceRetriever.getDailyPercentChange(share.getStockCode());
     	
     	
     	if( price > rocketValue)
     	{
     		
         	HashMap<String,String> temp = new HashMap<String,String>();
-        	temp.put("name", code);
-        	temp.put("price", Float.toString(price)+ "%");
-        	temp.put("color", "Rocket");
+        	temp.put("name", share.getShareName());
+        	temp.put("change", Float.toString(price)+ "%");
+        	temp.put("rocket", "Rocket");
+        	temp.put("plummet", "");
         	list.add(temp);
     		
     
@@ -105,9 +134,10 @@ public class AlertActivity extends  ListActivity
     	{
         	
     		HashMap<String,String> temp = new HashMap<String,String>();
-        	temp.put("name", code);
-        	temp.put("price", Float.toString(price) + "%");
-        	temp.put("color", "Plummet");
+        	temp.put("name", share.getShareName());
+        	temp.put("change", Float.toString(price) + "%");
+        	temp.put("rocket", "");
+        	temp.put("plummet", "plummet");
         	list.add(temp);
     		
     	}
