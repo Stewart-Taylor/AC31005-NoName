@@ -31,12 +31,6 @@ xmlns:android="http://schemas.android.com/apk/res/android" >
                 android:text="	Shares		"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
-            <Button
-                android:id="@+id/btn_refresh"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Refresh" />
-
         </LinearLayout>
         <View android:id="@+id/View03" android:background="#AFC7E8" android:layout_width="fill_parent" android:layout_height="4sp"></View>
        <ListView android:layout_weight="1" android:id="@+id/android:list" android:layout_height="fill_parent" android:layout_width="fill_parent" android:background="#000826" android:cacheColorHint="#000826"></ListView>

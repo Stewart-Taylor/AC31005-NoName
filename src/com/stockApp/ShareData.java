@@ -26,12 +26,12 @@ public class ShareData
 	{
 
 		//will get from file in future
-		shares.add( new Share( "BP Amoco pl" , "BP", 192));
-		shares.add( new Share( "Bowleven plc  ord 10P" , "BLVN", 3960));   
-		shares.add( new Share( "Experian ordinary" , "EXPN", 258));
-		shares.add( new Share( "HSBC Holdings plc ordinary 50 Cents" , "HSBA", 343));
-		shares.add( new Share( "Marks and Spencer Ordinary 25" , "MKS", 485));
-		shares.add( new Share( "Smith & Nephew plc ordinary" , "SN.", 1219));
+		shares.add( new Share( "BP Amoco pl" , "BP", 192 , 448.6f));
+		shares.add( new Share( "Bowleven plc  ord 10P" , "BLVN", 3960 , 96.5f));   
+		shares.add( new Share( "Experian ordinary" , "EXPN", 258 , 826.0f));
+		shares.add( new Share( "HSBC Holdings plc ordinary 50 Cents" , "HSBA", 343 ,497.0f));
+		shares.add( new Share( "Marks and Spencer Ordinary 25" , "MKS", 485 ,322.6f));
+		shares.add( new Share( "Smith & Nephew plc ordinary" , "SN.", 1219 ,548.0f));
 		
 		//shares.add( new Share( "Test ltd 40 PLC" , "Test", 999));
 	}
