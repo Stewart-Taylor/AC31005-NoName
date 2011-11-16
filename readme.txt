@@ -12,7 +12,7 @@ TO-DO LIST
 Unit TESTS   (Please someone do!)
 Code refactoring
 alert activity  (Done Just needs Gui Re-done)
-GUI Re-design    
+GUI Re-design    (Done)
 Plummet/rocket feature  DONE
 performance feature (What Is this?)
 get openning day price DONE ( See new price retriever Function)
