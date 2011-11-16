@@ -4,6 +4,7 @@
       android:versionCode="1"
       android:versionName="1.0">
     <uses-sdk android:minSdkVersion="6" />
+    <uses-library android:name="android.test.runner" /><!-- Required for JUnit Tests -->
 
     <application android:icon="@drawable/icon" android:label="@string/app_name" android:theme="@android:style/Theme.Black.NoTitleBar">>
         <activity android:name=".MainActivity"
@@ -21,4 +22,9 @@
 
     </application>
     <uses-permission android:name="android.permission.INTERNET" />
+    
+    <!-- Required for JUnit Tests -->
+    <instrumentation android:name="android.test.InstrumentationTestRunner"
+    android:targetPackage="your.package"
+    android:label="your tests label" />
 </manifest>
