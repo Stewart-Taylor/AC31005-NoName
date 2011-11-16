@@ -18,7 +18,7 @@ import android.widget.Toast;
 
 
 
-public class AlertActivity extends  ListActivity implements OnClickListener 
+public class AlertActivity extends  ListActivity 
 { 
 	
 	static final ArrayList<HashMap<String,String>> list =  new ArrayList<HashMap<String,String>>();
@@ -41,10 +41,6 @@ public class AlertActivity extends  ListActivity implements OnClickListener
         
      
 
-        
-        View newButton = findViewById(R.id.btn_refresh);
-        newButton.setOnClickListener(this);
-        
         refreshList();
         
 
@@ -74,20 +70,7 @@ public class AlertActivity extends  ListActivity implements OnClickListener
     
     }
     
-    
-    public void onClick(View v)
-    {
-    	
-    	
-    		//Starts new activity based on which button pressed
-	        switch (v.getId()) 
-	        {
-		            case R.id.btn_refresh:
-		                refreshList();
-		                break;
-		                
-	        }
-    	}
+   
     
     private void populateList()
     {
