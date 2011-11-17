@@ -24,8 +24,8 @@ public class AlertActivity extends  ListActivity
 	static final ArrayList<HashMap<String,String>> list =  new ArrayList<HashMap<String,String>>();
 	
 	
-    float plummetValue = -0.01f;
-    float rocketValue = 2;
+    float plummetValue = -20.0f;
+    float rocketValue = 10.0f;
     
     
     PriceRetriever priceRetriever = new PriceRetriever();
