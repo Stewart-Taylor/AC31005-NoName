@@ -22,7 +22,7 @@ public class PerformanceActivity extends   ListActivity
 { 
 	
 	static final ArrayList<HashMap<String,String>> list =  new ArrayList<HashMap<String,String>>();
-
+	ArrayList<PerformanceShare> shares = new ArrayList<PerformanceShare>();
 	
 	
 	 PriceRetriever priceRetriever = new PriceRetriever();
@@ -42,8 +42,35 @@ public class PerformanceActivity extends   ListActivity
     
     
     
+    
+    private void loadShares()
+    {
+    	ShareData shareData = new ShareData();
+    	
+    	 for (Share s : shareData.getShares())
+       	 {
+    		 PerformanceShare share  = new PerformanceShare();
+    		 share.share = s;
+    		 
+    		 try
+    		 {
+    		 	share.price = priceRetriever.getPrice(s.getStockCode());
+    		 	
+    		 	shares.add(share);
+    		 }
+    		 catch(Exception e)
+    		 {
+    			 
+    		 }
+       	 }
+    }
+    
+    
     private void refreshList()
     {
+    	
+    	
+    	loadShares();
     	
         SimpleAdapter adapter = new SimpleAdapter(
         		this,
@@ -112,14 +139,14 @@ public class PerformanceActivity extends   ListActivity
     {
     	ShareData shareData = new ShareData();
     	
-    	Share bestShare = null ;
+    	PerformanceShare bestShare = null ;
     	float best = 0;
     	
-    	Share secondBestShare = null ;
+    	PerformanceShare secondBestShare = null ;
     	float secondBest = 0;
     	
     	//Get Best
-     	 for (Share s : shareData.getShares())
+    	 for (PerformanceShare s : shares)
        	 {
      		 try
      		 {
@@ -141,7 +168,7 @@ public class PerformanceActivity extends   ListActivity
        	 }
      	 
      	//Get second Best
-     	 for (Share s : shareData.getShares())
+     	 for (PerformanceShare s : shares)
        	 {
      		 try
      		 {
@@ -164,12 +191,12 @@ public class PerformanceActivity extends   ListActivity
      	 //Set best share
      	 if(bestShare != null)
      	 {
-     		 fillShareBest(bestShare , best);
+     		 fillShareBest(bestShare.share , best);
      	 }
      	 
      	 if(secondBestShare != null)
      	 {
-     		 fillShareBest(secondBestShare , secondBest);
+     		 fillShareBest(secondBestShare.share , secondBest);
      	 }
     }
     
@@ -178,14 +205,14 @@ public class PerformanceActivity extends   ListActivity
     {
     	ShareData shareData = new ShareData();
     	
-    	Share worstShare = null ;
+    	PerformanceShare worstShare = null ;
     	float worst = 0;
     	
-    	Share secondWorstShare = null ;
+    	PerformanceShare secondWorstShare = null ;
     	float secondWorst = 0;
     	
     	//Get Best
-     	 for (Share s : shareData.getShares())
+    	 for (PerformanceShare s : shares)
        	 {
      		 try
      		 {
@@ -207,7 +234,7 @@ public class PerformanceActivity extends   ListActivity
        	 }
      	 
      	//Get second Best
-     	 for (Share s : shareData.getShares())
+     	 for (PerformanceShare s : shares)
        	 {
      		 try
      		 {
@@ -230,12 +257,12 @@ public class PerformanceActivity extends   ListActivity
      	 //Set best share
      	 if(secondWorstShare != null)
      	 {
-     		 fillShareWorst(secondWorstShare , secondWorst);
+     		 fillShareWorst(secondWorstShare.share , secondWorst);
      	 }
      	 
      	 if(worstShare != null)
      	 {
-     		 fillShareWorst(worstShare , worst);
+     		 fillShareWorst(worstShare.share , worst);
      	 }
      	 
 
@@ -246,14 +273,13 @@ public class PerformanceActivity extends   ListActivity
     
     
     
-    private float getWeekChange(Share share)
+    private float getWeekChange(PerformanceShare share)
     {
     	float weekChange = 0;
     	
     	
-    	float todayPrice = priceRetriever.getPrice(share.getStockCode());
     	
-    	weekChange = todayPrice / share.getOldPrice();
+    	weekChange = share.price / share.share.getOldPrice();
     	
     	if(weekChange > 1)
     	{
@@ -275,6 +301,13 @@ public class PerformanceActivity extends   ListActivity
     
 }
     
+
+//Acts as a struct
+class PerformanceShare
+{
+    public Share share;
+    public float price;
+}
   
   
    
