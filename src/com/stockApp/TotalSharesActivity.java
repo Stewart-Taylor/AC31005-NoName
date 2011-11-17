@@ -255,14 +255,14 @@ public class TotalSharesActivity extends  ListActivity
 	
 	        startActivity(shareIntent);
     	}
-	catch(Exception ex)
-	{
-		Context context = getApplicationContext();
-		CharSequence errorText = ex.toString();
-		Toast toast = Toast.makeText(context, errorText, Toast.LENGTH_LONG);
-		toast.show();
-			
-	}
+		catch(Exception ex)
+		{
+			Context context = getApplicationContext();
+			CharSequence errorText = ex.toString();
+			Toast toast = Toast.makeText(context, errorText, Toast.LENGTH_LONG);
+			toast.show();
+				
+		}
     }
     
     
