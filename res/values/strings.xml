@@ -13,6 +13,6 @@
     <string name="aboutLink">https://github.com/Taylore/AC31005-NoName</string>
     <string name="btn_about">About</string>
     <string name="lbl_alertbtn">Alert</string>
-    <string name="lbl_performancebtn">Performance Summary</string>
+    <string name="lbl_performancebtn">Performance</string>
     <string name="alert_tile">Alert</string>
 </resources>

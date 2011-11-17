@@ -76,8 +76,8 @@ public class PerformanceActivity extends   ListActivity
         		this,
         		list,
         		R.layout.performance_item,
-        		new String[] {"name","change","other"},
-        		new int[] {R.id.text1,R.id.text2, R.id.lbl_plummet }
+        		new String[] {"name","best" , "worst"},
+        		new int[] {R.id.text1, R.id.lbl_best , R.id.lbl_worst }
 
         		);
     	
@@ -119,8 +119,9 @@ public class PerformanceActivity extends   ListActivity
 
         	HashMap<String,String> temp = new HashMap<String,String>();
         	temp.put("name", share.getShareName());
-        	temp.put("change", "+" + priceDisplay + "%");
-        	temp.put("other", "Best");
+        	//temp.put("change", "+" + priceDisplay + "%");
+        	temp.put("best", "+" + priceDisplay + "%");
+        	temp.put("worst", "");
         	list.add(temp);	
     }
     
@@ -133,8 +134,9 @@ public class PerformanceActivity extends   ListActivity
     	
         	HashMap<String,String> temp = new HashMap<String,String>();
         	temp.put("name", share.getShareName());
-        	temp.put("change", priceDisplay + "%");
-        	temp.put("other", "Worst");
+        	 // temp.put("change", priceDisplay + "%");
+        	temp.put("worst", priceDisplay + "%");
+        	temp.put("best", "");
         	list.add(temp);	
     }
     
@@ -196,6 +198,14 @@ public class PerformanceActivity extends   ListActivity
      	 //Set best share
      	 if(bestShare != null)
      	 {
+     		
+         	HashMap<String,String> temp = new HashMap<String,String>();
+        	temp.put("name", "Best Of The Week");
+        	temp.put("change", "");
+        	temp.put("worst", "");
+        	temp.put("best", "");
+        	list.add(temp);	
+     		 
      		 fillShareBest(bestShare.share , best);
      	 }
      	 
@@ -262,6 +272,15 @@ public class PerformanceActivity extends   ListActivity
      	 //Set best share
      	 if(secondWorstShare != null)
      	 {
+     		 
+          	HashMap<String,String> temp = new HashMap<String,String>();
+        	temp.put("name", "Worst Of The Week");
+        	temp.put("change", "");
+        	temp.put("worst", "");
+        	temp.put("best", "");
+        	list.add(temp);	
+     		 
+     		 
      		 fillShareWorst(secondWorstShare.share , secondWorst);
      	 }
      	 
