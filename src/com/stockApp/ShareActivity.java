@@ -2,6 +2,7 @@ package com.stockApp;
 
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -72,7 +73,16 @@ public class ShareActivity extends Activity
                 t=(TextView)findViewById(R.id.lbl_daychange_percent); 
                 
                 float percentChange = priceRetriever.getDailyPercentChange(share.getStockCode());
-                t.setText("Daily Price Change :  " + percentChange + "%" );
+                t.setText("" + percentChange + "%" );
+               if( percentChange  < 0)
+               {
+                t.setTextColor(Color.RED);
+               }
+               else
+               {
+            	   t.setTextColor(Color.GREEN);
+            	   
+               }
        		
     	}
        	catch(Exception e)

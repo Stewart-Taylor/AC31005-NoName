@@ -16,11 +16,12 @@ public final class R {
     public static final class id {
         public static final int Divider0=0x7f050007;
         public static final int LinearLayout1=0x7f050019;
+        public static final int TextView01=0x7f050025;
         public static final int View01=0x7f050008;
         public static final int View02=0x7f050021;
         public static final int View03=0x7f05000b;
         public static final int View04=0x7f050024;
-        public static final int View05=0x7f050026;
+        public static final int View05=0x7f050027;
         public static final int btn_about=0x7f050015;
         public static final int btn_alert=0x7f050013;
         public static final int btn_exit=0x7f050016;
@@ -32,8 +33,8 @@ public final class R {
         public static final int lbl_aboutTitle=0x7f050000;
         public static final int lbl_alert_tile=0x7f050006;
         public static final int lbl_best=0x7f050017;
-        public static final int lbl_daychange_percent=0x7f050025;
-        public static final int lbl_error=0x7f05002a;
+        public static final int lbl_daychange_percent=0x7f050026;
+        public static final int lbl_error=0x7f05002b;
         public static final int lbl_extra_shareinfo=0x7f05001c;
         public static final int lbl_plummet=0x7f05000f;
         public static final int lbl_rocket=0x7f05000e;
@@ -46,9 +47,9 @@ public final class R {
         public static final int lbl_sharename=0x7f05001a;
         public static final int lbl_shares=0x7f05000a;
         public static final int lbl_sharetotal_display=0x7f050023;
-        public static final int lbl_totaltile=0x7f050027;
-        public static final int lbl_totaltitle=0x7f050028;
-        public static final int lbl_totalworth=0x7f050029;
+        public static final int lbl_totaltile=0x7f050028;
+        public static final int lbl_totaltitle=0x7f050029;
+        public static final int lbl_totalworth=0x7f05002a;
         public static final int lbl_worst=0x7f050018;
         public static final int linearLayout1=0x7f050002;
         public static final int linearLayout2=0x7f050009;

@@ -84,7 +84,16 @@ public class AlertActivity extends  ListActivity
    	        fillShare(s );
    	 }
       	 
-    
+    if(list.isEmpty())
+    {
+    	HashMap<String,String> temp = new HashMap<String,String>();
+    	temp.put("name", "No Plummets or Rockets!");
+    	temp.put("change", "");
+    	temp.put("rocket", "");
+    	temp.put("plummet", "");
+    	list.add(temp);
+    	
+    }
   
     }
     
