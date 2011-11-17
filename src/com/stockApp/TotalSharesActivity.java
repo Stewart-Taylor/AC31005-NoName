@@ -112,6 +112,8 @@ public class TotalSharesActivity extends  ListActivity
        	        
        	        
        	 }
+     	 
+     	 total = total /100f;
     	
      	 //format number then return
      	 //TO DO
