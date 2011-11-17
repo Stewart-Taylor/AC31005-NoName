@@ -113,10 +113,13 @@ public class PerformanceActivity extends   ListActivity
     {
     	price *= 100f;
     	price -= 100f;
+    	
+    	
+    	String priceDisplay  = String.format("%.2f" , price);
 
         	HashMap<String,String> temp = new HashMap<String,String>();
         	temp.put("name", share.getShareName());
-        	temp.put("change", "+ " + price + "%");
+        	temp.put("change", "+" + priceDisplay + "%");
         	temp.put("other", "Best");
         	list.add(temp);	
     }
@@ -126,9 +129,11 @@ public class PerformanceActivity extends   ListActivity
     {
     	price *= 100f;
     	
+    	String priceDisplay  = String.format("%.2f" , price);
+    	
         	HashMap<String,String> temp = new HashMap<String,String>();
         	temp.put("name", share.getShareName());
-        	temp.put("change", price + "%");
+        	temp.put("change", priceDisplay + "%");
         	temp.put("other", "Worst");
         	list.add(temp);	
     }
@@ -137,7 +142,7 @@ public class PerformanceActivity extends   ListActivity
     
     private void setBestShares()
     {
-    	ShareData shareData = new ShareData();
+  
     	
     	PerformanceShare bestShare = null ;
     	float best = 0;
@@ -203,7 +208,7 @@ public class PerformanceActivity extends   ListActivity
     
     private void setWorstShares()
     {
-    	ShareData shareData = new ShareData();
+    	
     	
     	PerformanceShare worstShare = null ;
     	float worst = 0;
