@@ -7,40 +7,25 @@
     android:orientation="vertical"
     android:padding="30dip" >
 
-    <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/lbl_sharename"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-         android:textColor="#FFFFFF" >
-
-        <TextView
-            android:id="@+id/lbl_sharename"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Share_Name"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="#FFFFFF" />
+        android:text="Share_Name"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
-        <TextView
-            android:id="@+id/lbl_share_set"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="19dp"
-            android:text="Share Set"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="#288C00" />
-
-        <TextView
-            android:id="@+id/lbl_extra_shareinfo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Share Info"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="#FFFFFF" />
+    <TextView
+        android:id="@+id/lbl_share_set"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Share Set"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
-    </LinearLayout>
-
- 
+    <TextView
+        android:id="@+id/lbl_extra_shareinfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Share Info"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
 </LinearLayout>
