@@ -61,10 +61,13 @@ public class ShareActivity extends Activity
                 t.setText("Share Set Worth " );
                 
                 
+                
+             	int setDisplay = (int)(price * share.getShareAmount())/100;
+             	String displaySet = Integer.toString(setDisplay);
+             	 displaySet =  insertCommas(displaySet);
+                
                 t=(TextView)findViewById(R.id.lbl_sharetotal_display); 
-                int priceDisplay = (int)((price * share.getShareAmount())/100);
-                String priceDisplayText =   Integer.toString(priceDisplay);
-                t.setText("£" + priceDisplayText );
+                t.setText("£" + displaySet );
                 
                 t=(TextView)findViewById(R.id.lbl_daychange_percent); 
                 
@@ -90,10 +93,20 @@ public class ShareActivity extends Activity
         t.setText("Stock Code: " + share.getStockCode());
         
 
-        
+     	String shareAmount = Integer.toString(share.getShareAmount());
+     	shareAmount =  insertCommas(shareAmount);
         t=(TextView)findViewById(R.id.lbl_shareAmount); 
-        t.setText("Amount : " + share.getShareAmount());
+        t.setText("Amount : " + shareAmount);
         
     }
   
+    
+    private String insertCommas(String str)
+    {
+        if(str.length() < 4){
+            return str;
+        }
+        return insertCommas(str.substring(0, str.length() - 3)) + "," + str.substring(str.length() - 3, str.length());
+    }
+    
 }

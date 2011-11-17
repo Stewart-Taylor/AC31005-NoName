@@ -50,14 +50,14 @@ public class TotalSharesActivity extends  ListActivity
         
         
         populateList();
-        float portfolioTotal =  getPortfolioTotal();
+        String portfolioTotalDisplay =  getPortfolioTotal();
         
         
         
             
         TextView t = new TextView(this); 
         t =(TextView)findViewById(R.id.lbl_totalworth); 
-        t.setText(" £" + (int)portfolioTotal);
+        t.setText(" £" + portfolioTotalDisplay);
         
         
         if( errorGettingTotals == true)
@@ -99,7 +99,7 @@ public class TotalSharesActivity extends  ListActivity
     
     
     
-    private float getPortfolioTotal()
+    private String getPortfolioTotal()
     {
     	
     	ShareData shareData = new ShareData();
@@ -115,9 +115,14 @@ public class TotalSharesActivity extends  ListActivity
     	
      	 //format number then return
      	 //TO DO
+     	int totalTemp = (int)total; 
+     	String displayText = Integer.toString(totalTemp);
+     	 displayText =  insertCommas(displayText);
      	 
-    	return total;
+    	
+   
     
+     	 return displayText;
     }
     
     
@@ -155,12 +160,18 @@ public class TotalSharesActivity extends  ListActivity
     		
     		float price = priceRetriever.getPrice(share.getStockCode());
     		
+         	int setDisplay = (int)(price * share.getShareAmount())/100;
+         	String displaySet = Integer.toString(setDisplay);
+         	 displaySet =  insertCommas(displaySet);
+    		
+         	 
+          	String shareAmount = Integer.toString(share.getShareAmount());
+         	shareAmount =  insertCommas(shareAmount);
     	
         	HashMap<String,String> temp = new HashMap<String,String>();
         	temp.put("name", share.getShareName());
-        	int priceDisplay = (int)( (price * share.getShareAmount())/100);
-        	temp.put("price", "Set Worth : £" + priceDisplay );
-        	temp.put("extra", "Amount: " + share.getShareAmount() + "	 Price: " + (int)price);
+        	temp.put("price", "Set Worth : £" + displaySet );
+        	temp.put("extra", "Amount: " + shareAmount +  "	 Price: " + (int)price);
         	shares.add(temp);
         	shareData.add(share.getStockCode());
     
@@ -174,10 +185,14 @@ public class TotalSharesActivity extends  ListActivity
 			Toast toast = Toast.makeText(context, "Error Retrieving Share Data ", Toast.LENGTH_LONG);
 			toast.show();
 			
+			
+          	String shareAmount = Integer.toString(share.getShareAmount());
+         	shareAmount =  insertCommas(shareAmount);
+			
         	HashMap<String,String> temp = new HashMap<String,String>();
         	temp.put("name", share.getShareName());
         	temp.put("price", "Can't Retrieve Data " );
-        	temp.put("extra", "Amount: " + share.getShareAmount() );
+        	temp.put("extra", "Amount: " + shareAmount );
         	shares.add(temp);
         	shareData.add(share.getStockCode());
 	   	 	
@@ -250,6 +265,15 @@ public class TotalSharesActivity extends  ListActivity
 	}
     }
     
+    
+    
+    private String insertCommas(String str)
+    {
+        if(str.length() < 4){
+            return str;
+        }
+        return insertCommas(str.substring(0, str.length() - 3)) + "," + str.substring(str.length() - 3, str.length());
+    }
 
     
 }
