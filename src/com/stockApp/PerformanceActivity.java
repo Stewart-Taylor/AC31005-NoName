@@ -24,8 +24,9 @@ public class PerformanceActivity extends   ListActivity
 	static final ArrayList<HashMap<String,String>> list =  new ArrayList<HashMap<String,String>>();
 	ArrayList<PerformanceShare> shares = new ArrayList<PerformanceShare>();
 	
-	
 	 PriceRetriever priceRetriever = new PriceRetriever();
+	 
+	 
 	
     /** Called when the activity is first created. */
     @Override
@@ -36,10 +37,7 @@ public class PerformanceActivity extends   ListActivity
         setContentView(R.layout.performance);
         
         refreshList();
-        
     }
-    
-    
     
     
     
@@ -55,7 +53,6 @@ public class PerformanceActivity extends   ListActivity
     		 try
     		 {
     		 	share.price = priceRetriever.getPrice(s.getStockCode());
-    		 	
     		 	shares.add(share);
     		 }
     		 catch(Exception e)
@@ -68,8 +65,6 @@ public class PerformanceActivity extends   ListActivity
     
     private void refreshList()
     {
-    	
-    	
     	loadShares();
     	
         SimpleAdapter adapter = new SimpleAdapter(
@@ -84,28 +79,15 @@ public class PerformanceActivity extends   ListActivity
 		list.clear();
 		populateList();
 
-
 		setListAdapter(adapter);
-    
     }
     
    
     
     private void populateList()
-    {
-    	
-    	
-	
-		
-		
-		
+    {	
     	setBestShares();
-		setWorstShares();
-		
-      
-      	 
-    
-  
+	setWorstShares();
     }
     
     
@@ -113,8 +95,7 @@ public class PerformanceActivity extends   ListActivity
     {
     	price *= 100f;
     	price -= 100f;
-    	
-    	
+    
     	String priceDisplay  = String.format("%.2f" , price);
 
         	HashMap<String,String> temp = new HashMap<String,String>();
@@ -144,8 +125,6 @@ public class PerformanceActivity extends   ListActivity
     
     private void setBestShares()
     {
-  
-    	
     	PerformanceShare bestShare = null ;
     	float best = 0;
     	
@@ -183,8 +162,7 @@ public class PerformanceActivity extends   ListActivity
      			 	if( (price >= secondBest) && (price <= best ))
      			 	{
      			 		if(!(s.equals(bestShare)))
-     			 		{
-     			 			
+     			 		{	
      			 		secondBest = price;
      			 		secondBestShare = s;
      			 		}
@@ -218,8 +196,6 @@ public class PerformanceActivity extends   ListActivity
     
     private void setWorstShares()
     {
-    	
-    	
     	PerformanceShare worstShare = null ;
     	float worst = 0;
     	
@@ -288,11 +264,6 @@ public class PerformanceActivity extends   ListActivity
      	 {
      		 fillShareWorst(worstShare.share , worst);
      	 }
-     	 
-
-    	
-    	
-    
     }
     
     
@@ -301,28 +272,21 @@ public class PerformanceActivity extends   ListActivity
     {
     	float weekChange = 0;
     	
-    	
-    	
     	weekChange = share.price / share.share.getOldPrice();
     	
     	if(weekChange > 1)
     	{
-    	 //weekChange = 100f * weekChange;
     	}
     	else
     	{
     		weekChange = 1f - weekChange;
-    		//weekChange = 100f * weekChange;
     		weekChange = -weekChange;
     	}
     	
     	return weekChange;
     }
     
-    
-    
-    
-    
+
 }
     
 
