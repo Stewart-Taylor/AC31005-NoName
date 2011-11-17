@@ -14,10 +14,8 @@ Code refactoring
 alert activity  (Done Just needs Gui Re-done)
 GUI Re-design    
 Plummet/rocket feature  DONE
-performance feature (What Is this?)
+performance feature (Done)
 get openning day price DONE ( See new price retriever Function)
-save shares (probably wont need)
-Share data from sqlite db :[ (probably wont need)
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!!!!!!!!!!!UPDATE TASK SPREADSHEET!!!!!!!!!!!!!
