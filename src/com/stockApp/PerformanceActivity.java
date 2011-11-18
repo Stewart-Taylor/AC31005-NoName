@@ -31,8 +31,7 @@ public class PerformanceActivity extends   ListActivity
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState)
-    {
-    	
+    {	
         super.onCreate(savedInstanceState);
         setContentView(R.layout.performance);
         
@@ -78,7 +77,6 @@ public class PerformanceActivity extends   ListActivity
     	
 		list.clear();
 		populateList();
-
 		setListAdapter(adapter);
     }
     
@@ -100,7 +98,6 @@ public class PerformanceActivity extends   ListActivity
 
         	HashMap<String,String> temp = new HashMap<String,String>();
         	temp.put("name", share.getShareName());
-        	//temp.put("change", "+" + priceDisplay + "%");
         	temp.put("best", "+" + priceDisplay + "%");
         	temp.put("worst", "");
         	list.add(temp);	
@@ -115,7 +112,6 @@ public class PerformanceActivity extends   ListActivity
     	
         	HashMap<String,String> temp = new HashMap<String,String>();
         	temp.put("name", share.getShareName());
-        	 // temp.put("change", priceDisplay + "%");
         	temp.put("worst", priceDisplay + "%");
         	temp.put("best", "");
         	list.add(temp);	
