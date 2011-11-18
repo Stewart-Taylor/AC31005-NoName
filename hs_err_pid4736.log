@@ -1,0 +1,114 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  Internal Error (classFileParser.cpp:3470), pid=4736, tid=2232
+#  Error: ShouldNotReachHere()
+#
+# JRE version: 7.0-b147
+# Java VM: Java HotSpot(TM) Client VM (21.0-b17 mixed mode windows-x86 )
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.sun.com/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x02359c00):  JavaThread "Unknown thread" [_thread_in_vm, id=2232, stack(0x00c30000,0x00c80000)]
+
+Stack: [0x00c30000,0x00c80000],  sp=0x00c7f1e8,  free space=316k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x1630e1]
+V  [jvm.dll+0x15dcfb]
+V  [jvm.dll+0x18e37]
+V  [jvm.dll+0x1a6a8]
+V  [jvm.dll+0x2a42f]
+V  [jvm.dll+0x2b818]
+V  [jvm.dll+0x2bedb]
+V  [jvm.dll+0x2bf2a]
+V  [jvm.dll+0x2c07d]
+V  [jvm.dll+0x2c15a]
+V  [jvm.dll+0x2c3d7]
+V  [jvm.dll+0x73cb1]
+V  [jvm.dll+0x7406b]
+V  [jvm.dll+0x121a7c]
+V  [jvm.dll+0x14382a]
+V  [jvm.dll+0xa2940]
+C  [javaw.exe+0x1359]
+C  [javaw.exe+0x1dc9]
+C  [javaw.exe+0xa0cb]
+C  [javaw.exe+0xa155]
+C  [kernel32.dll+0x13677]  BaseThreadInitThunk+0x12
+C  [ntdll.dll+0x39f02]  RtlInitializeExceptionChain+0x63
+C  [ntdll.dll+0x39ed5]  RtlInitializeExceptionChain+0x36
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+
+Other Threads:
+
+=>0x02359c00 (exited) JavaThread "Unknown thread" [_thread_in_vm, id=2232, stack(0x00c30000,0x00c80000)]
+
+VM state:not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Dynamic libraries:
+0x00d60000 - 0x00d8f000 	C:\Program Files (x86)\Java\jdk1.7.0\bin\javaw.exe
+0x77250000 - 0x773d0000 	C:\Windows\SysWOW64\ntdll.dll
+0x758d0000 - 0x759d0000 	C:\Windows\syswow64\kernel32.dll
+0x76d60000 - 0x76da6000 	C:\Windows\syswow64\KERNELBASE.dll
+0x76db0000 - 0x76e50000 	C:\Windows\syswow64\ADVAPI32.dll
+0x75260000 - 0x7530c000 	C:\Windows\syswow64\msvcrt.dll
+0x74f10000 - 0x74f29000 	C:\Windows\SysWOW64\sechost.dll
+0x75d60000 - 0x75e50000 	C:\Windows\syswow64\RPCRT4.dll
+0x74dc0000 - 0x74e20000 	C:\Windows\syswow64\SspiCli.dll
+0x74db0000 - 0x74dbc000 	C:\Windows\syswow64\CRYPTBASE.dll
+0x759d0000 - 0x75ad0000 	C:\Windows\syswow64\USER32.dll
+0x74e80000 - 0x74f10000 	C:\Windows\syswow64\GDI32.dll
+0x75e50000 - 0x75e5a000 	C:\Windows\syswow64\LPK.dll
+0x75640000 - 0x756dd000 	C:\Windows\syswow64\USP10.dll
+0x74620000 - 0x747be000 	C:\Windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.7600.16661_none_420fe3fa2b8113bd\COMCTL32.dll
+0x757b0000 - 0x75807000 	C:\Windows\syswow64\SHLWAPI.dll
+0x75d00000 - 0x75d60000 	C:\Windows\system32\IMM32.DLL
+0x75bf0000 - 0x75cbc000 	C:\Windows\syswow64\MSCTF.dll
+0x73820000 - 0x7383a000 	C:\Windows\SysWOW64\nvinit.dll
+0x72820000 - 0x728de000 	C:\Program Files (x86)\Java\jdk1.7.0\jre\bin\msvcr100.dll
+0x70840000 - 0x70b61000 	C:\Program Files (x86)\Java\jdk1.7.0\jre\bin\client\jvm.dll
+0x72cc0000 - 0x72cc7000 	C:\Windows\system32\WSOCK32.dll
+0x75770000 - 0x757a5000 	C:\Windows\syswow64\WS2_32.dll
+0x75310000 - 0x75316000 	C:\Windows\syswow64\NSI.dll
+0x73840000 - 0x73872000 	C:\Windows\system32\WINMM.dll
+0x75cc0000 - 0x75cc5000 	C:\Windows\syswow64\PSAPI.DLL
+0x74a50000 - 0x74a5c000 	C:\Program Files (x86)\Java\jdk1.7.0\jre\bin\verify.dll
+0x74820000 - 0x74840000 	C:\Program Files (x86)\Java\jdk1.7.0\jre\bin\java.dll
+0x74800000 - 0x74813000 	C:\Program Files (x86)\Java\jdk1.7.0\jre\bin\zip.dll
+
+VM Arguments:
+jvm_args: -Dfile.encoding=Cp1252 -Xbootclasspath:C:\Program Files (x86)\Android\android-sdk\platforms\android-8\android.jar;C:\Program Files (x86)\Android\android-sdk\add-ons\addon-google_apis-google_inc_-8\libs\maps.jar 
+java_command: org.eclipse.jdt.internal.junit.runner.RemoteTestRunner -version 3 -port 3015 -testLoaderClass org.eclipse.jdt.internal.junit4.runner.JUnit4TestLoader -loaderpluginname org.eclipse.jdt.junit4.runtime -classNames com.testStock.AllTests
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=C:/Program Files (x86)/Java/jdk1.7.0/bin/../jre/bin/client;C:/Program Files (x86)/Java/jdk1.7.0/bin/../jre/bin;C:/Program Files (x86)/Java/jdk1.7.0/bin/../jre/lib/i386;C:\Program Files (x86)\Java\jdk1.7.0\bin;C:\Program Files (x86)\eclipse;
+USERNAME=fps700
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 37 Stepping 2, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 7 , 64 bit Build 7600 
+
+CPU:total 4 (2 cores per cpu, 2 threads per core) family 6 model 37 stepping 2, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, ht
+
+Memory: 4k page, physical 3854768k(1837216k free), swap 7707636k(5220140k free)
+
+vm_info: Java HotSpot(TM) Client VM (21.0-b17) for windows-x86 JRE (1.7.0-b147), built on Jun 27 2011 02:25:52 by "java_re" with unknown MS VC++:1600
+
+time: Fri Nov 18 13:31:22 2011
+elapsed time: 0 seconds
+

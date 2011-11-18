@@ -33,8 +33,6 @@ public class PriceRetrieverTest extends TestCase
 	   {
 	      int price = 50;
 	      
-	      
-
 	      assertTrue(price == 50) ;
 	   }
 	
