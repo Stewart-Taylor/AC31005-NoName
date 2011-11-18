@@ -35,16 +35,6 @@ public class ShareData
 		
 		//shares.add( new Share( "Test ltd 40 PLC" , "Test", 999));
 	}
-	
-	
-	
-	
-	private void saveShareData()
-	{
-	
-		//yeah i know...
-
-	}
 
 	
 }
