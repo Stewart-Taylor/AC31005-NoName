@@ -15,5 +15,4 @@ public class AllTests extends TestCase {
 		//$JUnit-END$
 		return suite;
 	}
-
 }
