@@ -23,12 +23,10 @@ public class AlertActivity extends  ListActivity
 	
 	static final ArrayList<HashMap<String,String>> list =  new ArrayList<HashMap<String,String>>();
 	
-	
-    float plummetValue = -20.0f;
-    float rocketValue = 10.0f;
+	float plummetValue = -20.0f;
+	float rocketValue = 10.0f;
     
-    
-    PriceRetriever priceRetriever = new PriceRetriever();
+        PriceRetriever priceRetriever = new PriceRetriever();
 	
 	
     /** Called when the activity is first created. */
@@ -39,11 +37,7 @@ public class AlertActivity extends  ListActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.alert);
         
-     
-
         refreshList();
-        
-
     }
     
     
@@ -65,74 +59,58 @@ public class AlertActivity extends  ListActivity
 		list.clear();
 		populateList();
 
-
 		setListAdapter(adapter);
-    
     }
     
    
     
     private void populateList()
     {
-    	
-    	
 		ShareData shareData = new ShareData();
-		
-		
-      	 for (Share s : shareData.getShares())
-   	 {
-   	        fillShare(s );
-   	 }
+			
+	      	 for (Share s : shareData.getShares())
+	   	 {
+	   	        fillShare(s );
+	   	 }
       	 
-    if(list.isEmpty())
-    {
-    	HashMap<String,String> temp = new HashMap<String,String>();
-    	temp.put("name", "No Plummets or Rockets!");
-    	temp.put("change", "");
-    	temp.put("rocket", "");
-    	temp.put("plummet", "");
-    	list.add(temp);
-    	
-    }
-  
+	    if(list.isEmpty())
+	    {
+	    	HashMap<String,String> temp = new HashMap<String,String>();
+	    	temp.put("name", "No Plummets or Rockets!");
+	    	temp.put("change", "");
+	    	temp.put("rocket", "");
+	    	temp.put("plummet", "");
+	    	list.add(temp);
+	    }
     }
     
     
     private void fillShare(Share share )
     {
-    	
-    	
     	try
-    	{
-    		
-    	
-    	float price = priceRetriever.getDailyPercentChange(share.getStockCode());
-    	
-    	
-    	if( price > rocketValue)
-    	{
-    		
-        	HashMap<String,String> temp = new HashMap<String,String>();
-        	temp.put("name", share.getShareName());
-        	temp.put("change", Float.toString(price)+ "%");
-        	temp.put("rocket", "Rocket");
-        	temp.put("plummet", "");
-        	list.add(temp);
-    		
-    
-    		
-    	}
-    	else if ( price < plummetValue)
-    	{
-        	
-    		HashMap<String,String> temp = new HashMap<String,String>();
-        	temp.put("name", share.getShareName());
-        	temp.put("change", Float.toString(price) + "%");
-        	temp.put("rocket", "");
-        	temp.put("plummet", "plummet");
-        	list.add(temp);
-    		
-    	}
+    	{	
+	    	float price = priceRetriever.getDailyPercentChange(share.getStockCode());
+	    		
+	    	if( price > rocketValue)
+	    	{
+	    		
+	        	HashMap<String,String> temp = new HashMap<String,String>();
+	        	temp.put("name", share.getShareName());
+	        	temp.put("change", Float.toString(price)+ "%");
+	        	temp.put("rocket", "Rocket");
+	        	temp.put("plummet", "");
+	        	list.add(temp);	
+	    	}
+	    	else if ( price < plummetValue)
+	    	{	
+	    		HashMap<String,String> temp = new HashMap<String,String>();
+	        	temp.put("name", share.getShareName());
+	        	temp.put("change", Float.toString(price) + "%");
+	        	temp.put("rocket", "");
+	        	temp.put("plummet", "plummet");
+	        	list.add(temp);
+	    		
+	    	}
     	
     	}
      	catch(Exception ex)
@@ -140,9 +118,7 @@ public class AlertActivity extends  ListActivity
 			Context context = getApplicationContext();
 			Toast toast = Toast.makeText(context, "Could not connect to the internet!", Toast.LENGTH_LONG);
 			toast.show();
-    	}	 
-    	
-    	
+    	}	 	
     }
     
 
